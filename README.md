@@ -5,7 +5,7 @@ It doesn't aim to provide a production ready infrastructure, but rather experime
 # Repository Organization
 Each stage of our experiment is be properly documented in this very `README.md` file, and each stage is accessible by a Git branch in the format `stage-{int}`. Each component of our system is contained in its own directory under the root directory, with a dedicated `README.md` documenting the component. Components are leveraged with Docker Compose.  
 
-# Stage 1
+# Stage 2
 ```
 .
 ├── docker-compose.yml
@@ -16,4 +16,4 @@ Each stage of our experiment is be properly documented in this very `README.md` 
 └── README.md
 ```
 
-The goal of this stage is to provide a REST API to manage Docker containers; [check how it's done](nginx/README.md)
+The goal of this stage is to create an API that leverages the Docker Daemon API to launch a Hello World Python container and return its contents
