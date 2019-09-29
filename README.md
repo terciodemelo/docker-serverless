@@ -11,7 +11,6 @@ Each stage of our experiment is be properly documented in this very `README.md` 
 ├── docker-compose.yml
 ├── LICENSE
 ├── nginx
-│  ├── Dockerfile
 │  ├── nginx.conf
 │  └── README.md
 └── README.md
