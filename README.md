@@ -13,7 +13,10 @@ Each stage of our experiment is be properly documented in this very `README.md` 
 ├── nginx
 │  ├── nginx.conf
 │  └── README.md
-└── README.md
+├── README.md
+└── serverless-api
+   ├── Dockerfile
+   └── main.py
 ```
 
-The goal of this stage is to create an API that leverages the Docker Daemon API to launch a Hello World Python container and return its contents
+The goal of this stage is to create an API that leverages the Docker Daemon API to list running containers and run an arbitrary Python code.

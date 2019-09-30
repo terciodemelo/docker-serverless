@@ -2,10 +2,18 @@ version: '3.7'
 networks:
   orchestration:
 services:
+  serverless-api:
+    build: serverless-api
+    volumes:
+    - ./serverless-api/main.py:/api/main.py
+    networks:
+      orchestration:
+        aliases:
+        - serverless.api
   docker-api:
     image: 'nginx:1.16.1'
     ports:
-    - '80:3000'
+    - '80:3001'
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
