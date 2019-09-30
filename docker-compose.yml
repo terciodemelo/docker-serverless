@@ -17,6 +17,7 @@ services:
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ./nginx/static:/static
     networks:
       orchestration:
         aliases:

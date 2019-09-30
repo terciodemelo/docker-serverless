@@ -5,18 +5,20 @@ It doesn't aim to provide a production ready infrastructure, but rather experime
 # Repository Organization
 Each stage of our experiment is be properly documented in this very `README.md` file, and each stage is accessible by a Git branch in the format `stage-{int}`. Each component of our system is contained in its own directory under the root directory, with a dedicated `README.md` documenting the component. Components are leveraged with Docker Compose.  
 
-# Stage 2
+# Stage 3
 ```
 .
 ├── docker-compose.yml
 ├── LICENSE
 ├── nginx
 │  ├── nginx.conf
-│  └── README.md
+│  ├── README.md
+│  └── static
+│     └── index.html
 ├── README.md
 └── serverless-api
    ├── Dockerfile
    └── main.py
 ```
 
-The goal of this stage is to create an API that leverages the Docker Daemon API to list running containers and run an arbitrary Python code.
+The goal of this stage is to create an UI to better use the serverless API created in the previous stages

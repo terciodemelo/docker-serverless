@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Python Serverless</title>
+    </head>
+
+    <body>
+        <div id="editor">
+            <button id="submit" onclick="run();">Run</button>
+            <textarea class="view" id="code-area" contenteditable="">print(list(range(10)))</textarea>
+        </div>
+        <textarea class="view" id="output" disabled></textarea>
+    </body>
+
+    <script>
+        function run() {
+            let python_code = document.getElementById('code-area').value
+
+            fetch("/api/serverless", {
+                method: 'POST',
+                body: python_code
+            }).then(res => res.text().then(text => {
+                document.getElementById('output').textContent = text
+                console.log(text)
+            }))
+        }
+    </script>
+
+    <style>
+        html, body{
+            margin: 0;
+            height: 100%;
+        }
+
+        textarea {
+            height: 100%;
+            width: 100%;
+        }
+
+        button {
+            padding: 5px 15px;
+        }
+
+        #editor {
+            height: 49%;
+            width: 100%;
+            margin-bottom: 6%;
+        }
+
+        #code-area {
+            background-color: #222225;
+        }
+
+        #output {
+            width: 100%;
+            height: 46%;
+            background-color: #444445;
+        }
+
+        .view {
+            font-family: monospace;
+            font-size: large;
+            border: 1px solid gray;
+            border-radius: 3px;
+            padding: 15px;
+            height: 100%;
+            color: white;
+        }
+    </style>
+</html>
