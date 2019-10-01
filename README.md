@@ -4,3 +4,6 @@ It doesn't aim to provide a production ready infrastructure, but rather experime
 
 # Repository Organization
 Each stage of our experiment is be properly documented in this very `README.md` file, and each stage is accessible by a Git tag in the format `stage-{int}`. Each component of our system is contained in its own directory under the root directory, with a dedicated `README.md` documenting the component. Components are leveraged with Docker Compose.  
+
+# The goals
+This walkthrough repository aims to build from scratch a simple REST API and UI to run arbitrary Python code on a host machine serverlessly by leveraging Docker.
